@@ -137,7 +137,9 @@ payload = '''
     </rs:Order>
 </Call>
 '''
-r = request.post("http://routing.dial800.com/routing", auth=HTTPBasicAuth('user','password'), data=payload)
+r = request.post("http://routing.dial800.com/routing",
+                 auth=HTTPBasicAuth('user','password'),
+                 data=payload)
 ```
 
 ### Using Ruby
