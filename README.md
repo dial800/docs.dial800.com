@@ -43,7 +43,7 @@ echo $request->send()->getBody();
 
 ### Using C Sharp
 
-```c#
+```csharp
 using System;
 using System.IO;
 using System.Net;
