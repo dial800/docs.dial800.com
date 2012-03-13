@@ -11,11 +11,11 @@ We know. You have two days to integrate with us. Don't worry, it's easy. We're h
 
 ### Using PHP
 
-1. Contact our team for credentials.
-2. Generate Payload and Submit
-
 ```php
 <?php
+
+# 1. Generate Payload and Submit
+
 $request = new HTTP_Request2('http://routing.dial800.com/roundtrip');
 $request->setMethod(HTTP_Request2::METHOD_POST)
     ->setAuth('user','password', HTTP_Request2::AUTH_BASIC)
@@ -34,13 +34,9 @@ $request->setMethod(HTTP_Request2::METHOD_POST)
         "</rs:Order>\r\n" .
         "</Call>"
     );
-?>
-```
 
-3. Submit
+# 2. Submit
 
-```php
-<?php
 echo $request->send()->getBody();
 ?>
 ```
