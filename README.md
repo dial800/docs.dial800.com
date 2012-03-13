@@ -12,8 +12,38 @@ We know. You have two days to integrate with us. Don't worry, it's easy. We're h
 ### Using PHP
 
 1. Contact our team for credentials.
-2. Generate Payload
+2. Generate Payload and Submit
+
+```php
+<?php
+$request = new HTTP_Request2('http://routing.dial800.com/roundtrip');
+$request->setMethod(HTTP_Request2::METHOD_POST)
+    ->setAuth('user','password', HTTP_Request2::AUTH_BASIC)
+    ->setHeader('Content-type: application/roundtrip.sales')
+    ->setBody(
+        "<?xml version=\"1.0\" encoding=\"utf-8\"?" . ">\r\n" .
+        "<Call xmlns=\"http://www.dial800.com/roundtrip/2011-07-15\r\n" .
+        "      xmlns:rs=\"http://www.dial800.com/roundtrip-sales/2011-08-04\">" .
+        "<ANI>tel:3105555555</ANI>\r\n" .
+        "<Target>tel:3109999999</Target>\r\n" . 
+        "<CallStart>2011-07-15T01:02:03-08:00</CallStart>\r\n" .
+        "<rs:Order payment=\"amex\">\r\n" .
+        "    <rs:Item price="100.00">OVEN</rs:Item>\r\n" .
+        "    <rs:Item price="100.00">SPK</rs:Item>\r\n" .
+        "    <rs:Item price="59.72">ERK 3 PAY</rs:Item>\r\n" .
+        "</rs:Order>\r\n" .
+        "</Call>"
+    );
+?>
+```
+
 3. Submit
+
+```php
+<?php
+echo $request->send()->getBody();
+?>
+```
 
 ### Using C Sharp
 
@@ -115,7 +145,7 @@ No match for the call.
 
 ### MercuryMedia
 
-[MercuryMedia](www.mercurymedia.com) uses two slightly different formats, [MLF](http://docs.dial800.com/dial800/mlf) and [MSF](http://docs.dial800.com/dial800/msf).
+[MercuryMedia](http://www.mercurymedia.com) uses two slightly different formats, [MLF](http://docs.dial800.com/dial800/mlf) and [MSF](http://docs.dial800.com/dial800/msf).
 
 ### Euro
 
