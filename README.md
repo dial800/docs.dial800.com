@@ -137,16 +137,26 @@ payload = '''
     </rs:Order>
 </Call>
 '''
-r = request.post("http://routing.dial800.com/routing",
+r = request.post('http://routing.dial800.com/routing',
                  auth=HTTPBasicAuth('user','password'),
                  data=payload)
 ```
 
 ### Using Ruby
 
-1. Contact our team for credentials.
-2. Generate Payload
-3. Submit
+```ruby
+require "net/http"
+require "uri"
+
+uri = URI.parse("http://routing.dial800.com/routing")
+
+http         = Net::HTTP.new(uri.host, uri.port)
+request      = Net::HTTP::Post.new(uri.host,uri.port)
+request.body = xml_string
+request.basic_auth("user","password")
+request.content_type = "application/roundtrip.sales"
+response     = http.request(request)
+```
 
 ## Reference
 
