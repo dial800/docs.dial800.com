@@ -43,7 +43,7 @@ echo $request->send()->getBody();
 
 ### Using C Sharp
 
-```csharp
+```cs
 using System;
 using System.IO;
 using System.Net;
@@ -121,9 +121,24 @@ namespace Dial800
 
 ### Using Python
 
-1. Contact our team for credentials.
-2. Generate Payload
-3. Submit
+```python
+from requests.auth import HTTPBasicAuth
+payload = '''
+<?xml version="1.0" encoding="utf-8" ?>
+<Call xmlns="http://www.dial800.com/roundtrip/2011-07-15"
+      xmlns:rs="http://www.dial800.com/roundtrip-sales/2011-08-04">      
+    <ANI>tel:3105555555</ANI>
+    <Target>tel:3109999999</Target>
+    <CallStart>2011-07-15T01:02:03-08:00</CallStart>
+    <rs:Order payment="amex">
+        <rs:Item price="100.00">OVEN</rs:Item>
+        <rs:Item price="100.00">SPK</rs:Item>
+        <rs:Item price="59.72">ERK 3 PAY</rs:Item>
+    </rs:Order>
+</Call>
+'''
+r = request.post("http://routing.dial800.com/routing", auth=HTTPBasicAuth('user','password'), data=payload)
+```
 
 ### Using Ruby
 
