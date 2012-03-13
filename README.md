@@ -14,7 +14,7 @@ We know. You have two days to integrate with us. Don't worry, it's easy. We're h
 ```php
 <?php
 
-# 1. Generate Payload and Submit
+# 1. Generate Payload
 
 $request = new HTTP_Request2('http://routing.dial800.com/roundtrip');
 $request->setMethod(HTTP_Request2::METHOD_POST)
@@ -43,9 +43,80 @@ echo $request->send()->getBody();
 
 ### Using C Sharp
 
-1. Contact our team for credentials.
-2. Generate Payload
-3. Submit
+```c#
+using System;
+using System.IO;
+using System.Net;
+using System.Text;
+
+
+namespace Dial800
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            byte[] postDataBytes;
+            const string userName    = "user";
+            const string password    = "password";
+            const string contentType = "application/roundtrip.sales";
+            const string postMethod  = "POST";
+            const string postData    = @"<?xml version="1.0" encoding="utf-8" ?>
+                                         <Call xmlns="http://www.dial800.com/roundtrip/2011-07-15"
+                                               xmlns:rs="http://www.dial800.com/roundtrip-sales/2011-08-04">      
+                                             <ANI>tel:3105555555</ANI>
+                                             <Target>tel:3109999999</Target>
+                                             <CallStart>2011-07-15T01:02:03-08:00</CallStart>
+                                             <rs:Order payment="amex">
+                                                 <rs:Item price="100.00">OVEN</rs:Item>
+                                                 <rs:Item price="100.00">SPK</rs:Item>
+                                                 <rs:Item price="59.72">ERK 3 PAY</rs:Item>
+                                             </rs:Order>
+                                        </Call>";
+
+            const string uri = "http://roundtrip.dial800.com/roundtrip";
+
+            postDataBytes = Encoding.UTF8.GetBytes( postData );
+
+            var urlEndpoint = new Uri(uri);
+            var request = WebRequest.Create( urlEndpoint ) as HttpWebRequest;
+
+            request.Credentials   = new NetworkCredential( userName, password );
+            request.Method        = postMethod;
+            request.ContentType   = contentType;
+            request.ContentLength = postDataBytes.Length;
+
+            using(Stream postStream = request.GetRequestStream())
+            {
+                postStream.Write( postDataBytes, 0, postDataBytes.Length );
+            }
+
+            try
+            {
+                using ( HttpWebResponse response = request.GetResponse() as HttpWebResponse )
+                {
+                    var reader = new StreamReader( response.GetResponseStream() );
+                    Console.WriteLine( reader.ReadToEnd() );
+                }
+            }
+            catch (WebException ex)
+            {
+                if (ex.Response != null)
+                {
+                    using (HttpWebResponse errorResponse = (HttpWebResponse)ex.Response)
+                    {
+                        Console.WriteLine(
+                            "The server returned '{0}' with the status code {1} ({2:d}).",
+                            errorResponse.StatusDescription, errorResponse.StatusCode,
+                            errorResponse.StatusCode);
+                    }
+                }
+            }
+            Console.ReadKey();
+        }
+    }
+}
+```
 
 ### Using Python
 
