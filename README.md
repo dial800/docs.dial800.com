@@ -4,7 +4,7 @@ We know. You have two days to integrate with us. Don't worry, it's easy. We're h
 
 ## How to submit data
 
-* [if I am using PHP](#using-php)?
+* [if I am using PHP?](#using-php)
 * [or C Sharp?](#using-c-sharp)
 * [or Python?](#using-python)
 * [or Ruby?](#using-ruby)
