@@ -240,8 +240,15 @@ No match for the call.
 ## Glossary
 ### XML - Core
 
-####ID
-String value representing the alphanumeric Call ID of the phone call to be matched for the associated Sales data. Optional.
+<dl>
+    <dt>ID</dt>
+    <dd>String value representing the alphanumeric Call ID of the phone call to be matched for the associated Sales data. Optional.</dd>
+    
+    
+    <dt></dt>
+    <dd></dd>
+</dl>
+
     
 </table>
 
