@@ -239,11 +239,17 @@ No match for the call.
 
 ## Glossary
 ### XML - Core
-
 <dl>
     <dt>ID</dt>
     <dd>String value representing the alphanumeric Call ID of the phone call to be matched for the associated Sales data. Optional.</dd>
-    
+    <dt>DNIS</dt>
+    <dd>10-Digit string value representing the DNIS (TFN) of the phone call to be matched for the associated Sales data. Optional.</dd>
+    <dt>ANI</dt>
+    <dd>10-Digit string value representing the ANI (Caller #) of the phone call to be matched for the associated Sales data. Optional.</dd>
+    <dt>Target</dt>
+    <dd>10-Digit string value representing the Target (“RingTo”) number of the phone call to be matched for the associated Sales data. Optional.</dd>
+    <dt>CallStart</dt>
+    <dd>The Call Start Time representing when this call was initiated. This value must be expressed using the standard XML DateTime format which includes the timezone offset identifier(i.e. “YYYY-MM-DDThh:mm:ss±HH:MM” or “YYYY-MM-DDThh:mm:ssZ”). Optional.</dd>
     
     <dt></dt>
     <dd></dd>
