@@ -237,6 +237,9 @@ No match for the call.
 404 Not Found
 ```
 
+## Glossary
+
+
 ## Working with Media Agencies
 
 ### MercuryMedia
