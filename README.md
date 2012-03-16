@@ -255,7 +255,9 @@ No match for the call.
     <dd></dd>
 </dl>
 #####Notes
-If the "&lt;ID&gt;" element is used, no other “Core Data” parameters are required, nor should they be passed, or an error will be issued. The “<ID>” element must always be passed on its own. 
+If the "&lt;ID&gt;" element is used, no other “Core Data” parameters are required, nor should they be passed, or an error will be issued. The “&lt;ID&gt;” element must always be passed on its own. 
+
+If the “&lt;ID&gt;” element is not passed/used, then the “&lt;ANI&gt;”, “&lt;Target&gt;”, and “&lt;CallStart&gt;” elements will be required to be passed, and the “&lt;DNIS&gt;” element may optionally be passed.
 
 ### XML - Data
 
