@@ -238,7 +238,11 @@ No match for the call.
 ```
 
 ## Glossary
+### XML - Core
 
+ID          value here
+
+### XML - Data
 
 ## Working with Media Agencies
 
