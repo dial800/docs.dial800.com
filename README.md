@@ -240,22 +240,9 @@ No match for the call.
 ## Glossary
 ### XML - Core
 
-<table>
-    <tr>
-        <th>Name</td>
-        <th>What It Does</td>
-        <th>Required?</td>
-    </tr>
-    <tr>
-        <td>ID</td>
-        <td>String value representing the alphanumeric Call ID of the phone call to be matched for the associated Sales data.</td>
-        <td>Optional</td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
+####ID
+String value representing the alphanumeric Call ID of the phone call to be matched for the associated Sales data. Optional.
+    
 </table>
 
 ### XML - Data
