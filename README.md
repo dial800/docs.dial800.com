@@ -238,26 +238,24 @@ No match for the call.
 ```
 
 ## Glossary
-### XML - Core
 <dl>
     <dt>ID</dt>
-    <dd>String value representing the alphanumeric Call ID of the phone call to be matched for the associated Sales data. Optional.</dd>
+    <dd>String value representing the alphanumeric Call ID of the phone call to be matched for the associated Sales data. Optional.<br/>
+    (The “&lt;ID&gt;” element must always be passed on its own or an error will be issued.)
+    </dd>
     <dt>DNIS</dt>
-    <dd>10-Digit string value representing the DNIS (TFN) of the phone call to be matched for the associated Sales data. Optional.</dd>
+    <dd>10-Digit string value representing the DNIS (TFN) of the phone call to be matched for the associated Sales data. Optional.<br/>
+    (The "&lt;DNIS&gt;" element must be passed if the “&lt;ID&gt;” is absent.)</dd>
     <dt>ANI</dt>
-    <dd>10-Digit string value representing the ANI (Caller #) of the phone call to be matched for the associated Sales data. Optional.</dd>
+    <dd>10-Digit string value representing the ANI (Caller #) of the phone call to be matched for the associated Sales data. Optional.<br/>
+    (The "&lt;ANI&gt;" element must be passed if the “&lt;ID&gt;” is absent.)</dd>
     <dt>Target</dt>
-    <dd>10-Digit string value representing the Target (“RingTo”) number of the phone call to be matched for the associated Sales data. Optional.</dd>
+    <dd>10-Digit string value representing the Target (“RingTo”) number of the phone call to be matched for the associated Sales data. Optional.<br/>
+    (The "&lt;Target&gt;" element may be passed if the “&lt;ID&gt;” is absent.)</dd>
     <dt>CallStart</dt>
-    <dd>The Call Start Time representing when this call was initiated. This value must be expressed using the standard XML DateTime format which includes the timezone offset identifier(i.e. “YYYY-MM-DDThh:mm:ss±HH:MM” or “YYYY-MM-DDThh:mm:ssZ”). Optional.</dd>
-    
-    <dt></dt>
-    <dd></dd>
+    <dd>The Call Start Time representing when this call was initiated. This value must be expressed using the standard XML DateTime format which includes the timezone offset identifier(i.e. “YYYY-MM-DDThh:mm:ss±HH:MM” or “YYYY-MM-DDThh:mm:ssZ”). Optional.<br/>
+    (The "&lt;CallStart&gt;" element may optionally be passed if the “&lt;ID&gt;” is absent.)</dd>
 </dl>
-#####Notes
-* If the "&lt;ID&gt;" element is used, no other “Core Data” parameters are required, nor should they be passed, or an error will be issued. The “&lt;ID&gt;” element must always be passed on its own. 
-
-* If the “&lt;ID&gt;” element is not passed/used, then the “&lt;ANI&gt;”, “&lt;Target&gt;”, and “&lt;CallStart&gt;” elements will be required to be passed, and the “&lt;DNIS&gt;” element may optionally be passed.
 
 
 ## Working with Media Agencies
