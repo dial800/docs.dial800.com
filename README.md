@@ -242,8 +242,19 @@ No match for the call.
 
 <table>
     <tr>
-        <td>Name</td>
-        <td>What It Does</td>
+        <th>Name</td>
+        <th>What It Does</td>
+        <th>Required?</td>
+    </tr>
+    <tr>
+        <td>ID</td>
+        <td>String value representing the alphanumeric Call ID of the phone call to be matched for the associated Sales data.</td>
+        <td>Optional</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
     </tr>
 </table>
 
