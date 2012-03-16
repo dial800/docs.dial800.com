@@ -240,7 +240,12 @@ No match for the call.
 ## Glossary
 ### XML - Core
 
-ID          value here
+<table>
+    <tr>
+        <td>Name</td>
+        <td>What It Does</td>
+    </tr>
+</table>
 
 ### XML - Data
 
