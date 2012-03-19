@@ -122,6 +122,7 @@ namespace Dial800
 ### Using Python
 
 ```python
+import requests
 from requests.auth import HTTPBasicAuth
 payload = '''
 <?xml version="1.0" encoding="utf-8" ?>
@@ -137,7 +138,7 @@ payload = '''
     </rs:Order>
 </Call>
 '''
-r = request.post('http://routing.dial800.com/routing',
+r = requests.post('http://routing.dial800.com/routing',
                  auth=HTTPBasicAuth('user','password'),
                  headers={'content-type': 'application/roundtrip.sales'},
                  data=payload)
