@@ -142,6 +142,8 @@ r = requests.post('http://routing.dial800.com/routing',
                  auth=HTTPBasicAuth('user','password'),
                  headers={'content-type': 'application/roundtrip.sales'},
                  data=payload)
+
+print r.text
 ```
 
 ### Using Ruby
