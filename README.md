@@ -16,7 +16,7 @@ We know. You have two days to integrate with us. Don't worry, it's easy. We're h
 
 # 1. Generate Payload
 
-$request = new HTTP_Request2('http://routing.dial800.com/roundtrip');
+$request = new HTTP_Request2('http://roundtrip.dial800.com/roundtrip');
 $request->setMethod(HTTP_Request2::METHOD_POST)
     ->setAuth('user','password', HTTP_Request2::AUTH_BASIC)
     ->setHeader('Content-Type: application/roundtrip.sales')
@@ -138,7 +138,7 @@ payload = '''
     </rs:Order>
 </Call>
 '''
-r = requests.post('http://routing.dial800.com/routing',
+r = requests.post('http://roundtrip.dial800.com/roundtrip',
                  auth=HTTPBasicAuth('user','password'),
                  headers={'Content-Type': 'application/roundtrip.sales'},
                  data=payload)
@@ -152,7 +152,7 @@ print r.text
 require "net/http"
 require "uri"
 
-uri = URI.parse("http://routing.dial800.com/routing")
+uri = URI.parse("http://roundtrip.dial800.com/roundtrip")
 
 http         = Net::HTTP.new(uri.host, uri.port)
 request      = Net::HTTP::Post.new(uri.host,uri.port)
