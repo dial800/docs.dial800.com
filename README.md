@@ -1,4 +1,4 @@
-![Documentation](http://docs.dial800.com/images/roundtrip.png)
+![Documentation](https://user-images.githubusercontent.com/2625292/43020714-cb31e6b8-8c15-11e8-8ef0-4e7d0fd72cd9.png)
 
 We know. You have two days to integrate with us. Don't worry, it's easy. We're here to help.
 
