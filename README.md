@@ -171,8 +171,9 @@ The Reference documentation can be found [here](http://docs.dial800.com/dial800/
 #### Request
 
 ```
-POST /calls
+POST https://roundtrip.dial800.com/roundtrip HTTP/1.1
 Content-Type: application/roundtrip.sales
+Authorization: Basic {base64encoded}
 ```
 
 ```xml
@@ -208,8 +209,9 @@ No match for the call.
 ### PUT
 
 ```
-PUT /calls
+PUT https://roundtrip.dial800.com/roundtrip HTTP/1.1
 Content-Type: application/roundtrip.sales
+Authorization: Basic {base64encoded}
 ```
 
 ```xml
