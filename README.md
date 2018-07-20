@@ -208,6 +208,8 @@ No match for the call.
 
 ### PUT
 
+#### Request
+
 ```
 PUT https://roundtrip.dial800.com/roundtrip HTTP/1.1
 Content-Type: application/roundtrip.sales
